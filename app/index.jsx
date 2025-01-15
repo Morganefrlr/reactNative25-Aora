@@ -9,7 +9,7 @@ export default function App(){
     <View style={styles.container}>
       <Text style={styles.text}>coucou!</Text>
       <StatusBar style=''/>
-      <Link href='/profile' style={{color: 'blue'}}>Go to Profile</Link>
+      <Link href='/home' style={{color: 'blue'}}>Go to Home</Link>
     </View>
   )
 }
@@ -19,12 +19,12 @@ export default function App(){
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor:'#fff',
+        backgroundColor:'#ffffff',
         alignItems:'center',
         justifyContent:'center',
     },
     text:{
-      fontWeight:'bold',
+      fontSize:'12',
       fontFamily: 'Poppins-Black'
     }
 })
