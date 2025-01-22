@@ -3,6 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../constants'
 import CustomButton from '../components/CustomButton'
 import { StatusBar } from 'expo-status-bar'
+import { Redirect,router } from 'expo-router'
 
 
 
@@ -22,7 +23,7 @@ export default function App(){
           <Text style={styles.textPresentation}>Where creativity meets innovation: embark on a journey of limitless exploration with Aora</Text>
           <CustomButton
            title='Continue with Email'
-           handlePress={() =>{}}
+           handlePress={() => router.push('/sign-in')}
            containerStyle={{width: '100%', marginTop : 28}}
           
           />
@@ -38,11 +39,12 @@ export default function App(){
 const styles = StyleSheet.create({
     mainContainer:{
       backgroundColor:'#161622',
-      height:'100%'
+      height:'100%',
     },
     viewContainer:{
       width:'100%',
       alignItems:'center',
+      justifyContent:'center',
       height:'100%',
       padding:16
     },
