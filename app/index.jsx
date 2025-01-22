@@ -1,6 +1,7 @@
 import { ScrollView, StyleSheet, View, Image, Text, } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../constants'
+import CustomButton from '../components/CustomButton'
 
 
 
@@ -18,8 +19,15 @@ export default function App(){
             <Image source={images.path} style={styles.styleDeco} resizeMode='contain'/>
           </View>
           <Text style={styles.textPresentation}>Where creativity meets innovation: embark on a journey of limitless exploration with Aora</Text>
+          <CustomButton
+           title='Continue with Email'
+           handlePress={() =>{}}
+           containerStyle={{width: '100%', marginTop : 28}}
+          
+          />
         </View>
       </ScrollView>
+      
     </SafeAreaView>
   )
 }
