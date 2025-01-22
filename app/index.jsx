@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, View, Image, Text, } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../constants'
 import CustomButton from '../components/CustomButton'
+import { StatusBar } from 'expo-status-bar'
 
 
 
@@ -27,7 +28,7 @@ export default function App(){
           />
         </View>
       </ScrollView>
-      
+      <StatusBar backgroundColor='#161622' style='light'/>
     </SafeAreaView>
   )
 }
