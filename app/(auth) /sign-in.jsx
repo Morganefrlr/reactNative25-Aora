@@ -1,15 +1,41 @@
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import {images} from '../../constants'
+import FormField from '../../components/FormField'
+import { useState } from 'react'
 
 
 const SignIn = () => {
+  const [form, setForm] = useState({
+    email:'',
+    password:''
+  })
+  const [onFocus, setOnFocus]= useState('')
+
   return (
     <SafeAreaView style={styles.safeAreaView}>
       <ScrollView>
         <View style={styles.viewStyle}>
           <Image source={images.logo} resizeMode='contain' style={styles.logo}/>
-        <Text style={styles.textLog}>Log in to Aora</Text>
+          <Text style={styles.textLog}>Log in to Aora</Text>
+          <FormField 
+            title='Email'
+            value={form.email}
+            handleChangeText={(e) => setForm({...form, email: e})}
+            otherStyles={{marginTop : 28}}
+            keyboardType='email-address'
+            setOnFocus={setOnFocus}
+            focusStyle={onFocus === 'Email' ? {borderColor : "#FF9C01"} : {}}
+          />
+
+          <FormField 
+            title='Password'
+            value={form.password}
+            handleChangeText={(e) => setForm({...form, password: e})}
+            otherStyles={{marginTop : 28}}
+            setOnFocus={setOnFocus}
+            focusStyle={onFocus === 'Password' ? {borderColor : "#FF9C01"} : {}}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
