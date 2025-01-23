@@ -3,14 +3,21 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import {images} from '../../constants'
 import FormField from '../../components/FormField'
 import { useState } from 'react'
-
+import CustomButton from '../../components/CustomButton'
+import { Link } from 'expo-router'
 
 const SignIn = () => {
   const [form, setForm] = useState({
     email:'',
     password:''
   })
+  const [isSubmitting,setIsSubmitting] = useState(false)
   const [onFocus, setOnFocus]= useState('')
+
+  const submit =() =>{
+
+  }
+  
 
   return (
     <SafeAreaView style={styles.safeAreaView}>
@@ -36,6 +43,19 @@ const SignIn = () => {
             setOnFocus={setOnFocus}
             focusStyle={onFocus === 'Password' ? {borderColor : "#FF9C01"} : {}}
           />
+
+          <CustomButton
+            title='Sing In'
+            handlePress={submit}
+            containerStyle={{marginTop : 28}}
+            isLoading={isSubmitting}
+          />
+
+          <View style={styles.boxLink}>
+            <Text style={styles.boxLinkText}>Don't have an account?</Text>
+            <Link href='/sign-up' style={styles.link}>Signup</Link>
+          </View>
+
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -54,6 +74,7 @@ const styles = StyleSheet.create({
     height:'100%',
     justifyContent:'center',
     paddingLeft:16,
+    paddingRight:16,
     marginTop:24,
   },
   logo:{
@@ -66,5 +87,23 @@ const styles = StyleSheet.create({
     fontWeight:'600',
     marginTop: 40,
     fontFamily:"Poppins-SemiBold",
+  },
+
+  boxLink:{
+    display:'flex',
+    justifyContent:'center',
+    flexDirection:'row',
+    paddingTop: 20,
+    gap:8
+  },
+  boxLinkText:{
+    fontSize: 18,
+    fontFamily:"Poppins-Regular",
+    color:"#CDCDE0",
+  },
+  link:{
+    fontSize:18,
+    fontFamily:"Poppins-SemiBold",
+    color:"#FF9C01",
   }
 })
