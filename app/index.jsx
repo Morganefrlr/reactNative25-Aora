@@ -27,7 +27,7 @@ export default function App(){
           
           <CustomButton
            title='Continue with Email'
-           handlePress={() => router.push('/sign-in')}
+           handlePress={() => router.push('/bookmark')}
            containerStyle={{width: '100%', marginTop : 28}}/>
 
         </View>
