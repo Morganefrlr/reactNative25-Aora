@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar'
 import { router } from 'expo-router'
 
 import CustomButton from '../components/CustomButton'
-import { homePageStyle } from '../utils/styles'
+import { homePageStyle } from '../styles/homepageStyle/styles'
 import { images } from '../constants'
 
 export default function App(){
@@ -27,7 +27,7 @@ export default function App(){
           
           <CustomButton
            title='Continue with Email'
-           handlePress={() => router.push('/bookmark')}
+           handlePress={() => router.push('/sign-in')}
            containerStyle={{width: '100%', marginTop : 28}}/>
 
         </View>

@@ -1,6 +1,7 @@
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { useState } from 'react'
 import {icons} from '../constants'
+import { formFieldStyle } from '../styles/authStyles/styles'
 
 
 
@@ -10,11 +11,11 @@ const FormField = ({title,value,setOnFocus, focusStyle, otherStyles, placeholder
 
   
   return (
-    <View style={[styles.formField, otherStyles]}>
-      <Text style={styles.formTitle}>{title}</Text>
+    <View style={[formFieldStyle.formField, otherStyles]}>
+      <Text style={formFieldStyle.formTitle}>{title}</Text>
 
       <View 
-        style={[styles.inputStyle, focusStyle]}>
+        style={[formFieldStyle.inputStyle, focusStyle]}>
         <TextInput
           value={value}
           placeholder={placeholder}
@@ -23,12 +24,12 @@ const FormField = ({title,value,setOnFocus, focusStyle, otherStyles, placeholder
           onChangeText={handleChangeText}
           secureTextEntry={title === 'Password' && !showPassword}
           {...props}
-          style={styles.placeholderStyle}
+          style={formFieldStyle.placeholderStyle}
         />
 
         {title === 'Password' && (
           <TouchableOpacity onPress={() =>setShowPassword(!showPassword)}>
-            <Image source={!showPassword ? icons.eye : icons.eyeHide} resizeMode='contain' style={styles.iconStyle}/>
+            <Image source={!showPassword ? icons.eye : icons.eyeHide} resizeMode='contain' style={formFieldStyle.iconStyle}/>
           </TouchableOpacity>
         )}
       </View>
@@ -39,38 +40,3 @@ const FormField = ({title,value,setOnFocus, focusStyle, otherStyles, placeholder
 
 export default FormField
 
-const styles = StyleSheet.create({
-    formField:{
-        marginTop: 8
-    },
-    formTitle:{
-        fontFamily:"Poppins-Medium",
-        color:'#CDCDE0',
-        fontSize: 16,
-
-    },
-    inputStyle:{
-      width:'100%',
-      height:64,
-      paddingLeft: 16,
-      paddingRight: 16,
-      backgroundColor:"#1E1E2D",
-      borderRadius:16,
-      borderWidth:2,
-      borderColor:"#232533",
-      display:'flex',
-      flexDirection:'row',
-      alignItems:'center',
-   
-    },
-    placeholderStyle:{
-      flex: 1,
-      color:'#fff',
-      fontFamily:"Poppins-SemiBold",
-      fontSize:16,
-    },
-    iconStyle:{
-       width:24,
-       height:24, 
-    }
-})
