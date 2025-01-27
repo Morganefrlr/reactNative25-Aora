@@ -1,6 +1,7 @@
 
 import { useState } from 'react'
 import FormAuth from '../../components/formAuth/FormAuth'
+import { createUser } from '../../lib/appwrite'
 
 const SignUp = () => {
 
@@ -40,13 +41,14 @@ const SignUp = () => {
   }
 
   const submit =() =>{
-
+    createUser()
   }
   return (
     <FormAuth 
       pageAuthDetail={pageAuthDetail}
       formFieldConfig={formFieldConfig }
       handleChangeText={handleChangeText}
+      submit={submit}
     />
   )
 }

@@ -33,7 +33,7 @@ const SignIn = () => {
     setForm({...form, [value]: e})
   }
   const submit =() =>{
-
+    console.log('test: ')
   }
 
 
@@ -42,6 +42,7 @@ const SignIn = () => {
       pageAuthDetail={pageAuthDetail}
       formFieldConfig={formFieldConfig }
       handleChangeText={handleChangeText}
+      submit={submit}
     />
   )
 }

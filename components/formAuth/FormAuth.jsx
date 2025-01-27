@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { formAuthStyle } from '../../styles/componentsStyle/styles'
 
 
-const FormAuth = ({pageAuthDetail, formFieldConfig, handleChangeText}) => {
+const FormAuth = ({pageAuthDetail, formFieldConfig, handleChangeText, submit}) => {
 
 
     const [onFocus, setOnFocus]= useState('')
@@ -39,7 +39,7 @@ const FormAuth = ({pageAuthDetail, formFieldConfig, handleChangeText}) => {
 
           <CustomButton
             title={pageAuthDetail.titleButton}
-            //handlePress={submit}
+            handlePress={submit}
             containerStyle={{marginTop : 28}}
             isLoading={isSubmitting}
           />
