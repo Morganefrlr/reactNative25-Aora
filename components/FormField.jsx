@@ -1,7 +1,7 @@
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { useState } from 'react'
 import {icons} from '../constants'
-import { formFieldStyle } from '../styles/authStyles/styles'
+import { formFieldStyle } from '../styles/componentsStyle/styles'
 
 
 

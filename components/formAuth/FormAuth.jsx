@@ -5,7 +5,8 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import {images} from '../../constants'
 import FormField from '../FormField'
 import { useState } from 'react'
-import { formAuthStyle } from '../../styles/authStyles/styles'
+import { formAuthStyle } from '../../styles/componentsStyle/styles'
+
 
 const FormAuth = ({pageAuthDetail, formFieldConfig, handleChangeText}) => {
 
